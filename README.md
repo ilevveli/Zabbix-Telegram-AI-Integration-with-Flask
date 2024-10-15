@@ -1,18 +1,30 @@
 # Zabbix-Telegram-AI-Integration-with-Flask
 In this project, I created an automated system that integrates Zabbix monitoring alerts with Telegram and OpenAI's GPT-4 via a Flask server. This setup allows Zabbix alerts to trigger AI-generated responses that are sent directly to a Telegram chat, providing smart recommendations based on alert messages.
 Project Overview
+
 •	Technology Stack:
+
 o	Zabbix: For system monitoring and alert management.
+
 o	Flask: As the backend server to handle Zabbix's webhook alerts.
+
 o	OpenAI API: To generate intelligent responses to alerts.
+
 o	Telegram API: To forward alerts and AI suggestions to a specific chat.
+
 o	Docker (optional): To simplify deployment using python:3.8-slim.
+
 Requirements
 To set up this system, you will need:
+
 •	Python 3.8
+
 •	Flask==2.3.2
+
 •	requests==2.31.0
+
 •	openai==0.27.8
+
 Make sure to have the OpenAI API key, Telegram bot token, and Telegram chat ID for the integration.
 
 1. Setting Up the Flask Server
