@@ -32,11 +32,17 @@ The Flask server will act as a webhook endpoint, receiving Zabbix alerts, proces
 
 2. Configuring Zabbix Webhook
 To trigger alerts from Zabbix to your Flask server, create a new media type in Zabbix using a webhook:
+
 •	Type: Webhook
+
 •	Parameters:
+
 o	EventId: {EVENT.ID}
+
 o	Message: {ALERT.MESSAGE}
+
 o	TriggerStatus: {TRIGGER.STATUS}
+
 o	WebhookUrl: http://<your-flask-server-ip>:5000/zabbix-webhook
 
 3. How It Works
@@ -46,17 +52,29 @@ o	WebhookUrl: http://<your-flask-server-ip>:5000/zabbix-webhook
 4.	Telegram notification: Flask sends the original Zabbix alert message along with GPT-4’s response to a designated Telegram chat.
 4. Deployment (Optional: Docker)
 To containerize and deploy the Flask server, you can create a simple Docker setup:
+
 Dockerfile:
+
 FROM python:3.8-slim
+
 WORKDIR /app
+
 COPY requirements.txt requirements.txt
+
 RUN pip install -r requirements.txt
+
 COPY . .
+
 CMD ["python", "app.py"]
+
 requirements.txt:
+
 Flask==2.3.2
+
 requests==2.31.0
+
 openai==0.27.8
+
 Conclusion
 This project demonstrates how you can integrate powerful AI models into your monitoring workflows using Zabbix and Telegram. The system provides real-time, smart recommendations directly within your communication channels, making alert management more efficient and insightful.
 
